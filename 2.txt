@@ -1,0 +1,28 @@
+import java.util.Scanner;
+public class Quad_roots
+{
+	public static void main(String args[])
+	{
+		Quad_roots ob=new Quad_roots();
+		Scanner in=new Scanner(System.in);
+		int a,b,c;
+		System.out.println("Enter the coefficients of the quadratic equations");
+		a=in.nextInt();
+		b=in.nextInt();
+		c=in.nextInt();
+		ob.Roots(a,b,c);
+	}
+	
+	public void Roots(int a,int b,int c)
+	{
+		double r1=0.0,r2=0.0;
+		if(((b*b)-4*a*c)<0)
+			System.out.println("Equation has no real roots");
+		else
+{
+			r1=(-b+Math.sqrt((b*b)-4*a*c))/(2*a);
+			r2=(-b-Math.sqrt((b*b)-4*a*c))/(2*a);
+			System.out.println("Roots of the quadratic equations are: "+r1+" "+r2);
+		}	
+	}
+}

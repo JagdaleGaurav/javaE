@@ -1,0 +1,40 @@
+import java.util.Scanner;
+public class Salary{
+	int empno;
+	double basic;
+	String empnm="";
+	double GS=0.0,NS=0.0;
+	public static void main(String args[])
+	{
+		Salary ob=new Salary();
+		ob.input();
+		ob.display();
+	}
+	
+	public void input()
+	{
+		Scanner in=new Scanner(System.in);
+		System.out.println("Enter the employee number");
+		empno=in.nextInt();
+		System.out.println("Enter the employee name");
+		in.nextLine();
+		empnm=in.nextLine();
+		System.out.println("Enter the basic salary");
+		basic=in.nextDouble();
+	}
+		
+	public void display()
+	{
+		double DA,HRA,PF;
+		DA=0.7*basic;
+		HRA=0.3*basic;
+		PF=0.1*basic;
+		int PT=100,CCA=240;
+		GS=basic+HRA+DA+CCA;
+		NS=GS-(PF+PT);
+		System.out.println("The Employee name is "+empnm);
+		System.out.println("The Employee number is "+empno);
+		System.out.println("The Gross salary is  "+GS);
+		System.out.println("The Net Salary is "+NS);
+	}
+}

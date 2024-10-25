@@ -1,0 +1,48 @@
+import java.util.Scanner;
+public class Student
+{
+	String name,address;
+	int age;
+	Student()
+	{
+		name="unknown";
+		age=0;
+		address="not available";
+	}
+	public void setInfo(String name,int age)
+	{
+		this.name=name;
+		this.age=age;
+	}
+	
+	public void setInfo(String name,int age,String address)
+	{
+		this.name=name;
+		this.age=age;
+		this.address=address;
+	}
+	public static void main(String args[])
+	{
+		Scanner in=new Scanner(System.in);
+		Student obj[]=new Student[10];
+		for(int i=0;i<10;i++)
+		{
+			obj[i]=new Student();
+			String nm,add;
+			int ag;		
+			System.out.println("Enter the name of student");
+nm=in.nextLine();
+			System.out.println("Enter the age of student");
+
+ag=in.nextInt();
+			System.out.println("Enter the address of student");
+			in.nextLine();
+			add=in.nextLine();
+			obj[i].setInfo(nm,ag,add);	
+		}
+		for(int j=0;j<10;j++)
+		{
+		System.out.println((j+1)+". Student name = "+obj[j].name+" Student age = "+obj[j].age+" Student     address = "+obj[j].address);
+		}
+	}
+}
